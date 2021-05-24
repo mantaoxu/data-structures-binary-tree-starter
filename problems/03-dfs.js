@@ -4,7 +4,10 @@
 // in the order you visited them.
 function dfs(root){
     // Your code here
-    
+    if(!root) return [];
+
+    return [root.val, ...dfs(root.left), ...dfs(root.right)]
+
 }
 
 module.exports = { dfs };
