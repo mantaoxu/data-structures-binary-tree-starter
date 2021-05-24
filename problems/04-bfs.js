@@ -2,11 +2,16 @@
 // binary tree, traverses it in depth-first-search
 // order, and returns an array containing the values
 // in the order you visited them.
+// queue //first in first out
 function bfs(root){
     // Your code here
     if(!root) return [];
 
-    return [root.val, ...bfs(root.left), ...bfs(root.right)]
+    const finalArr = [];
+    
+
+
+
     
 }
 

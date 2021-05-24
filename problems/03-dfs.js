@@ -2,6 +2,7 @@
 // binary tree, traverses it in depth-first-search
 // order, and returns an array containing the values
 // in the order you visited them.
+//stack  // last in first out
 function dfs(root){
     // Your code here
     if(!root) return [];
