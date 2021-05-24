@@ -8,7 +8,7 @@ function preOrderArray(root) {
     if(!root) {
         return [];
     }
-    return [root.value, ...root.left, ...root.right];
+    return [root.val, ...preOrderArray(root.left), ...preOrderArray(root.right)]
 
 }
 
@@ -18,6 +18,9 @@ function preOrderArray(root) {
 // left, self, right
 function inOrderArray(root) {
     // Your code here
+    if(!root) return [];
+
+    return [...inOrderArray(root.left), root.val, ...inOrderArray(root.right)]
 }
 
 // Implement a function that takes the root of a Binary Tree
@@ -26,6 +29,8 @@ function inOrderArray(root) {
 //left, right, self
 function postOrderArray(root) {
     // Your code here
+    if(!root) return [];
+    return [...postOrderArray(root.left), ...postOrderArray(root.right), root.val]
 }
 
 
