@@ -4,6 +4,10 @@
 // in the order you visited them.
 function bfs(root){
     // Your code here
+    if(!root) return [];
+
+    return [root.val, ...bfs(root.left), ...bfs(root.right)]
+    
 }
 
 module.exports = { bfs };
