@@ -7,36 +7,18 @@ const { TreeNode } = require("./01-tree-node");
 
 // queue //first in first out
 function bfs(root){
-//if there is no root, return []
-if (!this.root) {
-    return [];
+    //if there is no root, return []
+    if (!root) return [];
+
+    let queue = [root];
+    let finalArr = [];
+    while(queue.length) {
+        const node = queue.shift();
+        if(node.left) queue.push(node.left);
+        if(node.right)queue.push(node.right);
+        finalArr.push(node.val)
     }
-    //start a new Queue
-    const queue = new TreeNode();
-    //keep a tally of all values in the tree
-    const treeValues = [];
-    //add root to queue
-    queue.enqueue(this.root);
-    //while queue is not empty
-    while (queue.val !== 0) {
-    //get TreeNode Children
-    const nodeChildren = queue.left.val;
-    //if node has children, loop and add each to queue
-    if (nodeChildren.length !== 0) {
-        nodeChildren.forEach(child => queue.enqueue(child));
-    }
-    //push the first item in the queue to the tree values
-    treeValues.push(queue.left.val);
-    //remove first node from queue
-    queue.dequeue();
-    }
-    //return values, should be all TreeNodes
-    return treeValues;
-
-
-
-
-    
+    return finalArr;
 }
 
 module.exports = { bfs };
